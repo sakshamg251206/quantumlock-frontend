@@ -12,7 +12,7 @@ function App() {
   const generateKey = async () => {
     setStatus('Generating quantum-inspired key...');
     try {
-      const response = await fetch('http://localhost:5000/api/generate-key');
+      const response = await fetch('https://your-backend-url.onrender.com/api/generate-key');
       const data = await response.json();
       setKey(data.key);
       setStatus(data.message);
@@ -24,7 +24,7 @@ function App() {
   const encryptMessage = async () => {
     setStatus('Encrypting message with post-quantum algorithm...');
     try {
-      const response = await fetch('http://localhost:5000/api/encrypt', {
+      const response = await fetch('https://your-backend-url.onrender.com/api/generate-key', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function App() {
   const decryptMessage = async () => {
     setStatus('Decrypting message...');
     try {
-      const response = await fetch('http://localhost:5000/api/decrypt', {
+      const response = await fetch('https://your-backend-url.onrender.com/api/generate-key', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
