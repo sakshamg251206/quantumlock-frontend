@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
-import './App.css'; 
+import './App.css';
 
 function App() {
   const [key, setKey] = useState('');
@@ -17,7 +17,7 @@ function App() {
       setKey(data.key);
       setStatus(data.message);
     } catch (error) {
-      setStatus('Failed to generate key.');
+      setStatus('Failed to generate key. Ensure the backend is live.');
     }
   };
 
@@ -35,7 +35,7 @@ function App() {
       setEncryptedMessage(data.encrypted_message);
       setStatus(data.message);
     } catch (error) {
-      setStatus('Failed to encrypt message.');
+      setStatus('Failed to encrypt message. Check key and message.');
     }
   };
 
@@ -53,7 +53,7 @@ function App() {
       setDecryptedMessage(data.decrypted_message);
       setStatus(data.message);
     } catch (error) {
-      setStatus('Failed to decrypt message.');
+      setStatus('Failed to decrypt message. Check encrypted message and key.');
     }
   };
 
